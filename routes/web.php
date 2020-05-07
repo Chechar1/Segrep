@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Ruta hacial el bot de telegram
+Route::get('/activity', 'TelegramController@updatedActivity');
+
+//Ruta para mandar mensajes al bot
+Route::get('/manda', 'TelegramController@enviarMensaje');
