@@ -20,4 +20,7 @@ class TelegramController extends Controller
             'text' => $text
         ]);
     }
+    public function index(){
+        return view('telegram');
+    }
 }
