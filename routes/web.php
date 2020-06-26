@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Ruta para el admnistrador global
 Route::group(['middleware' => 'admin'], function () {
-    Route::get('/crear','RegistroController@create');
+    Route::get('/crear','RegistroController@create')->name('crear');
     Route::post('/registro', 'RegistroController@store')->name('registro');
     Route::get('/telegram', 'TelegramController@index')->name('telegram');
     Route::get('/activity', 'TelegramController@updatedActivity');
