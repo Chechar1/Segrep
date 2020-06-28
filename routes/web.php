@@ -17,13 +17,18 @@ Route::get('/', function () {
 
 Auth::routes(["register" => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/auth', 'TokenController@store')->name('auth');
+Route::post('/valida', 'TokenController@create');
 
-//Ruta para el admnistrador global
-Route::group(['middleware' => 'admin'], function () {
-    Route::get('/crear','RegistroController@create')->name('crear');
-    Route::post('/registro', 'RegistroController@store')->name('registro');
-    Route::get('/telegram', 'TelegramController@index')->name('telegram');
-    Route::get('/activity', 'TelegramController@updatedActivity');
-    Route::get('/manda', 'TelegramController@enviarMensaje');
+Route::group(['middleware' => 'tokenvalido'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    //Ruta para el admnistrador global
+    Route::group(['middleware' => 'admin'], function () {
+
+        Route::get('/crear','RegistroController@create')->name('crear');
+        Route::post('/registro', 'RegistroController@store')->name('registro');
+        Route::get('/activity', 'TelegramController@updatedActivity');
+        Route::get('/manda', 'TelegramController@enviarMensaje');
+        Route::get('/telegram', 'TelegramController@index')->name('telegram');
+    });
 });

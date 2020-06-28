@@ -35,6 +35,7 @@ return [
     "digits"           => ":attribute debe tener :digits dígitos.",
     "digits_between"   => ":attribute debe tener entre :min y :max dígitos.",
     "email"            => ":attribute no es un correo válido",
+    "multitoken"       => "El :attribute es obligatorio.",
     "exists"           => ":attribute es inválido.",
     "filled"           => "El campo :attribute es obligatorio.",
     "image"            => ":attribute debe ser una imagen.",
@@ -108,6 +109,7 @@ return [
         'email' => 'Correo',
         'password' => 'Contraseña',
         'telegramId' => 'Telegram Id',
+        'multitoken' => 'Token'
     ],
 
 ];
