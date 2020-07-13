@@ -14,7 +14,7 @@ class CreateRegistrosTable extends Migration
     public function up()
     {
         Schema::create('registros', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('category_id')->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

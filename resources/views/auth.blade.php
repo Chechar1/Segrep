@@ -16,6 +16,7 @@
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Validar</button>
+                    <a class='btn btn-link' href="{{ route('mandatoken') }}">{{ 'Manda nuevo token' }}</a>
                 </form>
         </div>
     </div>

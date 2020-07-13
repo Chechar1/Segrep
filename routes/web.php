@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Auth::routes(["register" => false]);
 
-Route::get('/auth', 'TokenController@store')->name('auth');
+Route::group(['middleware' => 'tokenevita'], function () {
+    Route::get('/auth', 'TokenController@store')->name('auth');
+    Route::get('/newtoken', 'TokenController@nuevoToken')->name('mandatoken');
+});
+
 Route::post('/valida', 'TokenController@create');
 
 Route::group(['middleware' => 'tokenvalido'], function () {

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('telegramId')->nullable()->unique();
             $table->string('multitoken')->nullable();
+            $table->boolean('enviado')->default(false);
             $table->boolean('is_valido')->default(false);
             $table->rememberToken();
             $table->timestamps();
