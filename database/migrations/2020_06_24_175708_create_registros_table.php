@@ -15,6 +15,11 @@ class CreateRegistrosTable extends Migration
     {
         Schema::create('registros', function (Blueprint $table) {
             $table->integer('category_id')->foreign('user_id')->references('id')->on('users');
+            $table->string('cpu');
+            $table->string('memtotal');
+            $table->string('memus');
+            $table->string('memlib');
+            $table->string('disco');
             $table->timestamps();
         });
     }
