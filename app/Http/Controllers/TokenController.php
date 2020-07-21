@@ -10,6 +10,8 @@ use App\Http\Requests\TokenValida;
 use Illuminate\Foundation\Console\Presets\React;
 use Telegram;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Console\Scheduling\Schedule;
+
 
 class TokenController extends Controller
 {
@@ -36,6 +38,7 @@ class TokenController extends Controller
         $usuario = Token::findOrFail(auth()->user()->id);
         if($token->multitoken != $usuario->multitoken){
             $usuario->enviado = false;
+            $usuario->multitoken = NULL;
             $usuario->save();
             Auth::logout();
             return redirect('/');
@@ -51,16 +54,17 @@ class TokenController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @return void
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store()
     {
-        $token = Str::random(10);
         $usuario = Token::findOrFail(auth()->user()->id);
-        $usuario->multitoken = $token;
-        $usuario->save();
         if($usuario->enviado == false){
+            $token = Str::random(10);
+            $usuario->multitoken = $token;
             $usuario->enviado = true;
             $usuario->save();
             Telegram::sendMessage([
