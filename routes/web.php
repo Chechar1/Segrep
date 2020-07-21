@@ -26,9 +26,9 @@ Route::post('/valida', 'TokenController@create');
 
 Route::group(['middleware' => 'tokenvalido'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/estado', 'MonitoreoController@store')->name('estado');
     //Ruta para el admnistrador global
     Route::group(['middleware' => 'admin'], function () {
-
         Route::get('/crear','RegistroController@create')->name('crear');
         Route::post('/registro', 'RegistroController@store')->name('registro');
         Route::get('/activity', 'TelegramController@updatedActivity');

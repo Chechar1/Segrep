@@ -57,9 +57,7 @@
                                                 {{ __('Registrar') }}
                                             </a>
                                     @endif
-                                    <a class="dropdown-item" href="#"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('estado') }}">
                                         {{ __('Estado servidor') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
