@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('multitoken')->nullable();
             $table->boolean('enviado')->default(false);
             $table->boolean('is_valido')->default(false);
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });
