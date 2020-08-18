@@ -4,7 +4,7 @@
     <div class='card'>
         <div class="card-body">
             <h4 class="card-title">Registrar Servidor</h4>
-            <form action=" {{ url('registro') }} " method="POST">
+            <form action=" {{ url('registroserver') }} " method="POST">
                 @csrf
                     <div class='form-group'>
                         <label for="name">{{ 'Nombre' }}</label>
@@ -17,7 +17,7 @@
                     </div>
                     <div class='form-group'>
                         <label for="name">{{ 'Ip' }}</label>
-                        <input class='form-control @error('ip') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Ingrese la ip">
+                        <input class='form-control @error('ip') is-invalid @enderror"' type="text" name="ip" id="ip" placeholder="Ingrese la ip">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -35,7 +35,7 @@
                     </div>
                     <div class='form-group'>
                         <label for="name">{{ 'Host' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Ingrese el host">
+                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="host" id="host" placeholder="Ingrese el host">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
                     </div>
                     <div class='form-group'>
                         <label for="telegramId">{{ 'Puerto' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror' type="number" name="telegramId" id="telegramId" placeholder="Ingrese el puerto">
+                        <input class='form-control @error('name') is-invalid @enderror' type="number" name="port" id="port" placeholder="Ingrese el puerto">
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
