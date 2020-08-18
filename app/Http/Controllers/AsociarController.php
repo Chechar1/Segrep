@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Servidor;
+use App\User;
+use App\Asociar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use App\Http\Requests\AsociarRegistro;
 
 class AsociarController extends Controller
 {
@@ -13,7 +20,9 @@ class AsociarController extends Controller
      */
     public function index()
     {
-        //
+        $servers = Servidor::all();
+        $datos = User::all();
+        return view('asociar', ['datos' => $servers, 'datoservers' => $datos]);
     }
 
     /**
@@ -34,8 +43,14 @@ class AsociarController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $registroAgregar = new Asociar;
+
+
+        $registroAgregar->user_id = $request->user_id;
+        $registroAgregar->server_id = $request->server_id;
+
+        $registroAgregar->save();
+        return redirect('/servidor');    }
 
     /**
      * Display the specified resource.
@@ -68,7 +83,16 @@ class AsociarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $serverup = Asociar::findOrFail($id);
+        if ($request->user_id != NULL){
+            $serverup->user_id = $request->user_id;
+        }
+        if ($request->server_id != NULL){
+            $serverup->server_id = $request->server_id;
+        }
+
+        $serverup->save();
+        return redirect('/asociarup');
     }
 
     /**
@@ -79,7 +103,7 @@ class AsociarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Asociar::delete($id);
     }
     public function ver(){
         $servers = Asociar::all();

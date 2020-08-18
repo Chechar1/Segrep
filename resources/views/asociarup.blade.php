@@ -3,8 +3,8 @@
 <div class="container">
     <div class='card'>
         <div class="card-body">
-            <h4 class="card-title">Asociar servicios</h4>
-            <form action=" {{ url('asociar') }} " method="POST">
+            <h4 class="card-title">Actualizar asociar</h4>
+            <form action=" {{ url('actualizarasociar', $server->id) }} " method="POST">
                 @csrf
                     <div class='form-group'>
                         <label for="name">{{ 'Administrador' }}</label>

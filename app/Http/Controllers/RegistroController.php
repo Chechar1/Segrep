@@ -100,7 +100,7 @@ class RegistroController extends Controller
         }
 
         $resgistroup->save();
-        return redirect('/servidor');
+        return redirect('/actualizar');
     }
 
     /**
