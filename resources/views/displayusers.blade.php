@@ -10,18 +10,18 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($users as $user)
+            @foreach ($servers as $server)
                 <tr>
-                    <td class="v-align-middle">{{$user->name}}</td>
-                    <td class="v-align-middle">{{$user->email}}</td>
-                    <td class="v-align-middle">{{$user->telegramid}}</td>
+                    <td class="v-align-middle">{{$server->name}}</td>
+                    <td class="v-align-middle">{{$server->email}}</td>
+                    <td class="v-align-middle">{{$server->telegramid}}</td>
                     <td class="v-align-middle">
 
-                        <form action="{{ route('eliminar',$user->id) }}" method="POST" class="form-horizontal" role="form">
+                        <form action="{{ route('eliminar',$server->id) }}" method="POST" class="form-horizontal" role="form">
 
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <a href="{{ route('actualizar',$user->id) }}" class="btn btn-primary">Editar</a>
+                            <a href="{{ route('actualizar', $server->id) }}" class="btn btn-primary">Editar</a>
 
                             <button type="submit" class="btn btn-danger">Eliminar</button>
 
