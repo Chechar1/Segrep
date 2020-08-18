@@ -83,9 +83,24 @@ class RegistroController extends Controller
      * @param  \App\Registro  $registro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Registro $registro)
+    public function update(Request $request, $id)
     {
-        //
+        $resgistroup = Registro::findOrFail($id);
+        if ($request->name != NULL){
+            $resgistroup->name = $request->name;
+        }
+        if ($request->email != NULL){
+            $resgistroup->email = $request->name;
+        }
+        if ($request->password != NULL){
+            $resgistroup->password = $request->name;
+        }
+        if ($request->telegramId != NULL){
+            $resgistroup->telegramId = $request->name;
+        }
+
+        $resgistroup->save();
+        return redirect('/servidor');
     }
 
     /**
@@ -94,9 +109,9 @@ class RegistroController extends Controller
      * @param  \App\Registro  $registro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Registro $registro)
+    public function destroy($id)
     {
-        //
+        Registro::delete($id);
     }
 }
 

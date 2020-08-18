@@ -17,7 +17,7 @@
                     </div>
                     <div class='form-group'>
                         <label for="name">{{ 'Ip' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Nombre">
+                        <input class='form-control @error('ip') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Nombre">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

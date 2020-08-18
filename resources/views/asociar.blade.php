@@ -8,21 +8,27 @@
                 @csrf
                     <div class='form-group'>
                         <label for="name">{{ 'Administrador' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Nombre">
+                        <input class='form-control @error('name') is-invalid @enderror"' type="select" name="name" id="name">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                    @foreach ($datos as $dato)
+                        <option value="{{ $dato }}"> {{ $dato }}</option>
+                    @endforeach
                     </div>
                     <div class='form-group'>
                         <label for="name">{{ 'Servidor' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Nombre">
+                        <input class='form-control @error('server') is-invalid @enderror"' type="select" name="server" id="server">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                    @foreach ($datos as $dato)
+                        <option value="{{ $dato }}"> {{ $dato }}</option>
+                    @endforeach
                     </div>
                     <button type="submit" class="btn btn-primary">Registrar</button>
                 </form>

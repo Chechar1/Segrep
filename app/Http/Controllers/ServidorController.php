@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Servidor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use App\Http\Requests\ServidoRegistro;
 
 class ServidorController extends Controller
 {
@@ -13,7 +18,7 @@ class ServidorController extends Controller
      */
     public function index()
     {
-        //
+        return view('server');
     }
 
     /**
@@ -34,7 +39,18 @@ class ServidorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registroAgregar = new Servidor;
+
+
+        $registroAgregar->name = $request->name;
+        $registroAgregar->ip = $request->ip;
+        $registroAgregar->password = $request->password;
+        $registroAgregar->host = $request->host;
+        $registroAgregar->port = $request->port;
+
+
+        $registroAgregar->save();
+        return redirect('/servidor');
     }
 
     /**
@@ -68,7 +84,24 @@ class ServidorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $serverup = Servidor::findOrFail($id);
+        if ($request->name != NULL){
+            $serverup->name = $request->name;
+        }
+        if ($request->ip != NULL){
+            $serverup->ip = $request->name;
+        }
+        if ($request->password != NULL){
+            $serverup->password = $request->name;
+        }
+        if ($request->host != NULL){
+            $serverup->host = $request->name;
+        }
+        if ($request->port != NULL){
+            $serverup->port = $request->name;
+        }
+        $serverup->save();
+        return redirect('/servidor');
     }
 
     /**
@@ -79,6 +112,6 @@ class ServidorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Servidor::delete($id);
     }
 }

@@ -29,10 +29,31 @@ Route::group(['middleware' => 'tokenvalido'], function () {
     Route::get('/estado', 'MonitoreoController@store')->name('estado');
     //Ruta para el admnistrador global
     Route::group(['middleware' => 'admin'], function () {
-        Route::get('/crear','RegistroController@create')->name('crear');
-        Route::post('/registro', 'RegistroController@store')->name('registro');
         Route::get('/activity', 'TelegramController@updatedActivity');
         Route::get('/manda', 'TelegramController@enviarMensaje');
         Route::get('/telegram', 'TelegramController@index')->name('telegram');
+
+        //Rutas para crear
+        Route::get('/crear','RegistroController@create')->name('crear');
+        Route::get('/servidor','ServidorController@index')->name('server');
+        Route::get('/asociar','AsociarController@index')->name('asociar');
+
+        //Rutas registro
+        Route::post('/registro', 'RegistroController@store')->name('registro');
+        Route::post('/registroserver','RegistroController@create')->name('registroserver');
+        Route::post('/registroasociar','AsociarController@create')->name('registroasociar');
+
+        //Rutas actualizar
+        Route::get('/actualizar','RegistroController@actualizar')->name('actualizar');
+        Route::post('/actualziaruser','RegistroController@update')->name('actualizaruser');
+        Route::get('/serverup','ServidorController@actualizar')->name('serverup');
+        Route::post('/actualziarserver','ServidorController@update')->name('actualizarserver');
+        Route::get('/asociarup','AsociarController@actualizar')->name('asociarup');
+        Route::post('/actualziarasociar','AsociarController@update')->name('actualizarasociar');
+
+        //Rutas borrar
+        Route::post('/eliminar','RegistroController@delete')->name('eliminar');
+        Route::post('/serverdel','ServidorController@delete')->name('eliminarservidor');
+        Route::post('/delasociar','AsociarController@delete')->name('eliminarasociar');
     });
 });

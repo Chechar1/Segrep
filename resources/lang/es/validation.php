@@ -109,7 +109,8 @@ return [
         'email' => 'Correo',
         'password' => 'Contraseña',
         'telegramId' => 'Telegram Id',
-        'multitoken' => 'Token'
+        'multitoken' => 'Token',
+        'server' => 'Servidor'
     ],
 
 ];

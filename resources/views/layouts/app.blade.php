@@ -54,7 +54,19 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @if (auth()->check() && auth()->user()->is_admin)
                                             <a class="dropdown-item" href="{{ route('crear') }}">
-                                                {{ __('Registrar') }}
+                                                {{ __('Registrar administradores') }}
+                                            </a>
+                                            <a class="dropdown-item" href="{{ route('server') }}">
+                                                {{ __('Registrar servidor') }}
+                                            </a>
+                                            <a class="dropdown-item" href="{{ route('asociar') }}">
+                                                {{ __('Asociar Administrador/Servidor') }}
+                                            </a>
+                                            <a class="dropdown-item" href="{{ route('serverup') }}">
+                                                {{ __('Actualizar/borrar administradores') }}
+                                            </a>
+                                            <a class="dropdown-item" href="{{ route('asociarup') }}">
+                                                {{ __('Actualizar/borrar servidores') }}
                                             </a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('estado') }}">
