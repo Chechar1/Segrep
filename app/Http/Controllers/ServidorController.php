@@ -114,4 +114,8 @@ class ServidorController extends Controller
     {
         Servidor::delete($id);
     }
+    public function ver(){
+        $servers = Servidor::all();
+        return view('displayserver');
+    }
 }

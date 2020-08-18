@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Servidor extends Model
+class Asociar extends Model
 {
-    protected $table = 'servidores';
+    protected $table = 'asociar';
 
     /**
      * The attributes that are mass assignable.
@@ -14,6 +14,6 @@ class Servidor extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'ip', 'password', 'host', 'port'
+        'user_id', 'server_id',
     ];
 }

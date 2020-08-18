@@ -43,6 +43,11 @@ Route::group(['middleware' => 'tokenvalido'], function () {
         Route::post('/registroserver','RegistroController@create')->name('registroserver');
         Route::post('/registroasociar','AsociarController@create')->name('registroasociar');
 
+        //Ruta para ver
+        Route::get('/ver','RegistroController@ver')->name('visualizar');
+        Route::get('/verserver','ServidorController@ver')->name('visualizarserver');
+        Route::get('/verasociar','AsociarController@ver')->name('visualizarasociar');
+
         //Rutas actualizar
         Route::get('/actualizar','RegistroController@actualizar')->name('actualizar');
         Route::post('/actualziaruser','RegistroController@update')->name('actualizaruser');

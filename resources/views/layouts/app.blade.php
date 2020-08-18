@@ -62,11 +62,14 @@
                                             <a class="dropdown-item" href="{{ route('asociar') }}">
                                                 {{ __('Asociar Administrador/Servidor') }}
                                             </a>
-                                            <a class="dropdown-item" href="{{ route('serverup') }}">
+                                            <a class="dropdown-item" href="{{ route('visualizar') }}">
                                                 {{ __('Actualizar/borrar administradores') }}
                                             </a>
-                                            <a class="dropdown-item" href="{{ route('asociarup') }}">
+                                            <a class="dropdown-item" href="{{ route('visualizarserver') }}">
                                                 {{ __('Actualizar/borrar servidores') }}
+                                            </a>
+                                            <a class="dropdown-item" href="{{ route('visualizarasociar') }}">
+                                                {{ __('Actualizar/borrar Asociar') }}
                                             </a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('estado') }}">

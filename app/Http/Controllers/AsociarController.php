@@ -81,4 +81,8 @@ class AsociarController extends Controller
     {
         //
     }
+    public function ver(){
+        $servers = Servidor::all();
+        return view('displayasociar');
+    }
 }
