@@ -16,7 +16,7 @@ class CreateServidoresTable extends Migration
         Schema::create('servidores', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('ip')->unique();
+            $table->string('ip')->unique();
             $table->string('password');
             $table->string('host');
             $table->string('port');

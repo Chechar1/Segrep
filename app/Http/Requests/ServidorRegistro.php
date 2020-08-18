@@ -25,7 +25,7 @@ class ServidorRegistro extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'ip' => ['required', 'string', 'email', 'max:255'],
+            'ip' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8'],
             'host' => ['required','min:9','max:9'],
             'port' => ['required','min:4','max:9'],
