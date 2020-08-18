@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use App\Http\Requests\ServidoRegistro;
+use App\Http\Requests\ServidorRegistro;
 
 class ServidorController extends Controller
 {
@@ -37,7 +37,7 @@ class ServidorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ServidoRegistro $request)
+    public function store(ServidorRegistro $request)
     {
         $registroAgregar = new Servidor;
 
