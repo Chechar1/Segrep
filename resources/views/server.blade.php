@@ -17,7 +17,7 @@
                     </div>
                     <div class='form-group'>
                         <label for="name">{{ 'Ip' }}</label>
-                        <input class='form-control @error('ip') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Nombre">
+                        <input class='form-control @error('ip') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Ingrese la ip">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -35,7 +35,7 @@
                     </div>
                     <div class='form-group'>
                         <label for="name">{{ 'Host' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Nombre">
+                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Ingrese el host">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -44,8 +44,8 @@
                     </div>
                     <div class='form-group'>
                         <label for="telegramId">{{ 'Puerto' }}</label>
-                        <input class='form-control @error('telegramId') is-invalid @enderror' type="number" name="telegramId" id="telegramId" placeholder="Id">
-                        @error('telegramId')
+                        <input class='form-control @error('name') is-invalid @enderror' type="number" name="telegramId" id="telegramId" placeholder="Ingrese el puerto">
+                        @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
