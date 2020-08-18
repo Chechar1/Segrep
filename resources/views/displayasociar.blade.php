@@ -3,20 +3,17 @@
     <table class="table table-striped table-bordered table-hover">
         <thead>
             <tr>
-                <th>Servidor</th>
-                <th>Ip</th>
-                <th>Host</th>
-                <th>Puerto</th>
+                <th>Administrador</th>
+                <th>Server</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($servers as $server)
                 <tr>
-                    <td class="v-align-middle">{{$server->name}}</td>
-                    <td class="v-align-middle">{{$server->ip}}</td>
-                    <td class="v-align-middle">{{$server->host}}</td>
-                    <td class="v-align-middle">{{$server->port}}</td>
+                    <td class="v-align-middle">{{$server->user_id}}</td>
+                    <td class="v-align-middle">{{$server->server_id}}</td>
+
                     <td class="v-align-middle">
 
                         <form action="{{ route('eliminarasociar',$server->id) }}" method="POST" class="form-horizontal" role="form">
