@@ -14,6 +14,8 @@ class CreateAsociarTable extends Migration
     public function up()
     {
         Schema::create('asociar', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('server_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('server_id')->references('id')->on('servidores');
             $table->softDeletes();
