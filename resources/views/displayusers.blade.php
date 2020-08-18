@@ -14,7 +14,7 @@
                 <tr>
                     <td class="v-align-middle">{{$server->name}}</td>
                     <td class="v-align-middle">{{$server->email}}</td>
-                    <td class="v-align-middle">{{$server->telegramid}}</td>
+                    <td class="v-align-middle">{{$server->telegramId}}</td>
                     <td class="v-align-middle">
 
                         <form action="{{ route('eliminar',$server->id) }}" method="POST" class="form-horizontal" role="form">

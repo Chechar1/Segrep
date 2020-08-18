@@ -34,7 +34,7 @@ Route::group(['middleware' => 'tokenvalido'], function () {
         Route::get('/telegram', 'TelegramController@index')->name('telegram');
 
         //Rutas para crear
-        Route::get('/crear','RegistroController@create')->name('crear');
+        Route::get('/crear','RegistroController@index')->name('crear');
         Route::get('/servidor','ServidorController@index')->name('server');
         Route::get('/asociar','AsociarController@index')->name('asociar');
 
