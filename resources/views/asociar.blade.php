@@ -4,7 +4,7 @@
     <div class='card'>
         <div class="card-body">
             <h4 class="card-title">Asociar servicios</h4>
-            <form action=" {{ url('asociar') }} " method="POST">
+            <form action=" {{ url('registroasociar') }} " method="POST">
                 @csrf
                     <div class='form-group'>
                         <label for="name">{{ 'Administrador' }}</label>
