@@ -82,7 +82,7 @@ class AsociarController extends Controller
         //
     }
     public function ver(){
-        $servers = Servidor::all();
-        return view('displayasociar');
+        $servers = Asociar::all();
+        return view('displayasociar', ['servers' => $servers]);
     }
 }

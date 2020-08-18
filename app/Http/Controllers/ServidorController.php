@@ -116,6 +116,6 @@ class ServidorController extends Controller
     }
     public function ver(){
         $servers = Servidor::all();
-        return view('displayserver');
+        return view('displayserver', ['servers' => $servers]);
     }
 }

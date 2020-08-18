@@ -114,8 +114,8 @@ class RegistroController extends Controller
         Registro::delete($id);
     }
     public function ver(){
-        $servers = Servidor::all();
-        return view('displayusers');
+        $servers = Registro::all();
+        return view('displayusers', ['servers' => $servers]);
     }
 }
 
