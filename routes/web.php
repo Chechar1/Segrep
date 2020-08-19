@@ -36,7 +36,7 @@ Route::group(['middleware' => 'tokenvalido'], function () {
         //Rutas para crear
         Route::get('/crear','RegistroController@index')->name('crear');
         Route::get('/servidor','ServidorController@index')->name('server');
-        Route::get('/asociar','AsociarController@index')->name('asociar');
+        Route::get('/asociarc','AsociarController@index')->name('asociarc');
 
         //Rutas registro
         Route::post('/registro', 'RegistroController@store')->name('registro');
@@ -50,11 +50,11 @@ Route::group(['middleware' => 'tokenvalido'], function () {
 
         //Rutas actualizar
         Route::get('/actualizar/{id}','RegistroController@actualizar')->name('actualizar');
-        Route::put('/actualziaruser/{id}','RegistroController@update')->name('actualizaruser');
+        Route::post('/actualziaruser/{id}','RegistroController@update')->name('actualizaruser');
         Route::get('/serverup/{id}','ServidorController@actualizar')->name('serverup');
-        Route::put('/actualziarserver/{id}','ServidorController@update')->name('actualizarserver');
+        Route::post('/actualziarserver/{id}','ServidorController@update')->name('actualizarserver');
         Route::get('/asociarup/{id}','AsociarController@actualizar')->name('asociarup');
-        Route::put('/actualziarasociar/{id}','AsociarController@update')->name('actualizarasociar');
+        Route::post('/actualziarasociar/{id}','AsociarController@update')->name('actualizarasociar');
 
         //Rutas borrar
         Route::put('/eliminar/{id}','RegistroController@destroy')->name('eliminar');

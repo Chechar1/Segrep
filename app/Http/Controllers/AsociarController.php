@@ -51,7 +51,7 @@ class AsociarController extends Controller
         $registroAgregar->server_id = $request->server_id;
 
         $registroAgregar->save();
-        return redirect('asociar');
+        return redirect('asociarc');
     }
 
     /**
@@ -90,7 +90,7 @@ class AsociarController extends Controller
         $serverup->server_id = $request->server_id;
 
         $serverup->save();
-        return redirect('/asociarup');
+        return redirect('/verasociar');
     }
 
     /**

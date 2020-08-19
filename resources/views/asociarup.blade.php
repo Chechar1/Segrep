@@ -4,7 +4,7 @@
     <div class='card'>
         <div class="card-body">
             <h4 class="card-title">Actualizar asociar</h4>
-            <form action=" {{ url('actualizarasociar', $jugos->id) }} " method="POST">
+            <form action=" {{ route('actualizarasociar', $jugos->id) }} " method="POST">
                 @csrf
                     <div class='form-group'>
                         <label for="name">{{ 'Administrador' }}</label>

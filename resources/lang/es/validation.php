@@ -110,7 +110,10 @@ return [
         'password' => 'Contraseña',
         'telegramId' => 'Telegram Id',
         'multitoken' => 'Token',
-        'server' => 'Servidor'
+        'server' => 'Servidor',
+        'host' => 'Host',
+        'ip' => 'Ip',
+        'port' => 'Puerto'
     ],
 
 ];

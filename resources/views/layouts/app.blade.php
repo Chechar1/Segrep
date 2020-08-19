@@ -59,7 +59,7 @@
                                             <a class="dropdown-item" href="{{ route('server') }}">
                                                 {{ __('Registrar servidor') }}
                                             </a>
-                                            <a class="dropdown-item" href="{{ route('asociar') }}">
+                                            <a class="dropdown-item" href="{{ route('asociarc') }}">
                                                 {{ __('Asociar Administrador/Servidor') }}
                                             </a>
                                             <a class="dropdown-item" href="{{ route('visualizar') }}">
@@ -72,12 +72,14 @@
                                                 {{ __('Actualizar/borrar Asociar') }}
                                             </a>
                                     @endif
-                                    <a class="dropdown-item" href="{{ route('estado') }}">
-                                        {{ __('Estado servidor') }}
-                                    </a>
-                                    <a class="dropdown-item" href="http://localhost:6766" target="_blank">
-                                        {{ __('Conectar servidor') }}
-                                    </a>
+                                    @if (!auth()->check() && auth()->user()->is_admin)
+                                        <a class="dropdown-item" href="{{ route('estado') }}">
+                                            {{ __('Estado servidor') }}
+                                        </a>
+                                        <a class="dropdown-item" href="http://localhost:6766" target="_blank">
+                                            {{ __('Conectar servidor') }}
+                                        </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

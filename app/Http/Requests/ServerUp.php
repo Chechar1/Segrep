@@ -24,7 +24,11 @@ class ServerUp extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'string', 'max:255'],
+            'ip' => ['required', 'string','min:7','max:16'],
+            'password' => ['required', 'string', 'min:8'],
+            'host' => ['required','min:7','max:16'],
+            'port' => ['required','min:4','max:4'],
         ];
     }
 }

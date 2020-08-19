@@ -4,11 +4,11 @@
     <div class='card'>
         <div class="card-body">
             <h4 class="card-title">Actualizar Servidor</h4>
-            <form action=" {{ url('actualizarjugos', $jugos->id) }} " method="POST">
+            <form action=" {{ route('actualizarserver', $jugos->id) }} " method="POST">
                 @csrf
                     <div class='form-group'>
                         <label for="name">{{ 'Nombre' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="name" id="name" placeholder="Nombre">
+                    <input class='form-control @error('name') is-invalid @enderror"' type="text" name="name" id="name" placeholder="{{ $jugos->name }}">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -16,9 +16,9 @@
                     @enderror
                     </div>
                     <div class='form-group'>
-                        <label for="name">{{ 'Ip' }}</label>
-                        <input class='form-control @error('ip') is-invalid @enderror"' type="text" name="ip" id="ip" placeholder="Ip">
-                    @error('name')
+                        <label for="ip">{{ 'Ip' }}</label>
+                        <input class='form-control @error('ip') is-invalid @enderror"' type="text" name="ip" id="ip" placeholder="{{ $jugos->ip }}">
+                    @error('ip')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -34,18 +34,18 @@
                         @enderror
                     </div>
                     <div class='form-group'>
-                        <label for="name">{{ 'Host' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror"' type="text" name="host" id="host" placeholder="Host">
-                    @error('name')
+                        <label for="host">{{ 'Host' }}</label>
+                        <input class='form-control @error('host') is-invalid @enderror"' type="text" name="host" id="host" placeholder="{{ $jugos->host }}">
+                    @error('host')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                     </div>
                     <div class='form-group'>
-                        <label for="telegramId">{{ 'Puerto' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror' type="number" name="port" id="port" placeholder="port">
-                        @error('name')
+                        <label for="port">{{ 'Puerto' }}</label>
+                        <input class='form-control @error('port') is-invalid @enderror' type="number" name="port" id="port" placeholder="{{ $jugos->port }}">
+                        @error('port')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

@@ -50,7 +50,7 @@ class ServidorController extends Controller
         $servidorAgregar->port = $request->port;
 
         if ($request->has('password')) {
-            $registroAgregar['password']=Hash::make($registroAgregar['password']);
+            $servidorAgregar['password']=Hash::make($servidorAgregar['password']);
         }
 
         $servidorAgregar->save();
@@ -92,10 +92,15 @@ class ServidorController extends Controller
         $serverup->name = $request->name;
         $serverup->ip = $request->ip;
         $serverup->password = $request->password;
+
+        if ($request->has('password')) {
+            $serverup['password']=Hash::make($serverup['password']);
+        }
+
         $serverup->host = $request->host;
         $serverup->port = $request->port;
         $serverup->save();
-        return redirect('/servidor');
+        return redirect('/verserver');
     }
 
     /**

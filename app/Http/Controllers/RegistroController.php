@@ -86,15 +86,18 @@ class RegistroController extends Controller
      */
     public function update(UserUp $request, $id)
     {
-        $resgistroup = Registro::find($id);
-        $resgistroup->name = $request->name;
-        $resgistroup->email = $request->name;
-        $resgistroup->password = $request->name;
-        $resgistroup->telegramId = $request->name;
+        $serverup = Registro::find($id);
+        $serverup->name = $request->name;
+        $serverup->email = $request->email;
+        $serverup->password = $request->password;
 
+        if ($request->has('password')) {
+            $serverup['password']=Hash::make($serverup['password']);
+        }
 
-        $resgistroup->save();
-        return redirect('/actualizar');
+        $serverup->telegramId = $request->telegramId;
+        $serverup->save();
+        return redirect('/ver');
     }
 
     /**
