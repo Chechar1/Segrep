@@ -48,10 +48,12 @@ class ServidorController extends Controller
         $servidorAgregar->host = $request->host;
         $servidorAgregar->port = $request->port;
 
+        if ($request->has('password')) {
+            $registroAgregar['password']=Hash::make($registroAgregar['password']);
+        }
 
         $servidorAgregar->save();
-        echo($servidorAgregar);
-        //return redirect('/servidor');
+        return redirect('/servidor');
     }
 
     /**
