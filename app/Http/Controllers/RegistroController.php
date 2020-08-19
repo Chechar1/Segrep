@@ -111,7 +111,7 @@ class RegistroController extends Controller
      */
     public function destroy($id)
     {
-        Registro::delete($id);
+        Registro::destroy($id);
     }
     public function ver(){
         $servers = Registro::all();

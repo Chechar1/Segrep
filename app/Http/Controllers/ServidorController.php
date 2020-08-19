@@ -115,7 +115,7 @@ class ServidorController extends Controller
      */
     public function destroy($id)
     {
-        Servidor::delete($id);
+        Servidor::destroy($id);
     }
     public function ver(){
         $servers = Servidor::all();
