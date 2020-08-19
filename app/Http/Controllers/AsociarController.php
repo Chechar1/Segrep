@@ -103,7 +103,7 @@ class AsociarController extends Controller
      */
     public function destroy($id)
     {
-        Asociar::delete($id);
+        Asociar::destroy($id);
     }
     public function ver(){
         $servers = Asociar::all();
