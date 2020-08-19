@@ -39,18 +39,19 @@ class ServidorController extends Controller
      */
     public function store(ServidorRegistro $request)
     {
-        $registroAgregar = new Servidor;
+        $servidorAgregar = new Servidor;
 
 
-        $registroAgregar->name = $request->name;
-        $registroAgregar->ip = $request->ip;
-        $registroAgregar->password = $request->password;
-        $registroAgregar->host = $request->host;
-        $registroAgregar->port = $request->port;
+        $servidorAgregar->name = $request->name;
+        $servidorAgregar->ip = $request->ip;
+        $servidorAgregar->password = $request->password;
+        $servidorAgregar->host = $request->host;
+        $servidorAgregar->port = $request->port;
 
 
-        $registroAgregar->save();
-        return redirect('/servidor');
+        $servidorAgregar->save();
+        echo($servidorAgregar);
+        //return redirect('/servidor');
     }
 
     /**
