@@ -16,7 +16,7 @@
 
                     <td class="v-align-middle">
 
-                        <form action="{{ route('eliminarasociar', $server->id) }}" method="POST" class="form-horizontal" role="form">
+                        <form action="{{ route('eliminarasociar', $server->user_id) }}" method="POST" class="form-horizontal" role="form">
 
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
