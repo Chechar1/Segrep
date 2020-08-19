@@ -75,6 +75,9 @@
                                     <a class="dropdown-item" href="{{ route('estado') }}">
                                         {{ __('Estado servidor') }}
                                     </a>
+                                    <a class="dropdown-item" href="http://localhost:6766" target="_blank">
+                                        {{ __('Conectar servidor') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

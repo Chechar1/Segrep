@@ -34,7 +34,7 @@
                         @enderror
                     </div>
                     <div class='form-group'>
-                        <label for="name">{{ 'Host' }}</label>
+                        <label for="host">{{ 'Host' }}</label>
                         <input class='form-control @error('name') is-invalid @enderror"' type="text" name="host" id="host" placeholder="Ingrese el host">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                     @enderror
                     </div>
                     <div class='form-group'>
-                        <label for="telegramId">{{ 'Puerto' }}</label>
+                        <label for="port">{{ 'Puerto' }}</label>
                         <input class='form-control @error('name') is-invalid @enderror' type="number" name="port" id="port" placeholder="Ingrese el puerto">
                         @error('name')
                             <span class="invalid-feedback" role="alert">

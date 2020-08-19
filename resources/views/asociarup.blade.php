@@ -4,31 +4,25 @@
     <div class='card'>
         <div class="card-body">
             <h4 class="card-title">Actualizar asociar</h4>
-            <form action=" {{ url('actualizarasociar', $server->id) }} " method="POST">
+            <form action=" {{ url('actualizarasociar', $jugos->id) }} " method="POST">
                 @csrf
                     <div class='form-group'>
                         <label for="name">{{ 'Administrador' }}</label>
-                        <input class='form-control @error('name') is-invalid @enderror"' type="select" name="name" id="name">
+                    <input class='form-control @error('name') is-invalid @enderror"' type="text" name="user_id" id="user_id" placeholder="{{ $jugos->user_id }}">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    @foreach ($datos as $dato)
-                        <option value="{{ $dato->id }}"> {{ $dato->id }}</option>
-                    @endforeach
                     </div>
                     <div class='form-group'>
                         <label for="name">{{ 'Servidor' }}</label>
-                        <input class='form-control @error('server') is-invalid @enderror"' type="select" name="server" id="server">
-                    @error('name')
+                        <input class='form-control @error('email') is-invalid @enderror' type="text" name="server_id" id="server_id" placeholder="{{ $jugos->server_id }}">
+                        @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                    @enderror
-                    @foreach ($datoservers as $datoserver)
-                        <option value="{{ $datoserver->id }}"> {{ $datoserver->id }}</option>
-                    @endforeach
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Registrar</button>
                 </form>

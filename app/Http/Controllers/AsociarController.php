@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use App\Http\Requests\AsociarRegistro;
+use App\Http\Requests\AsociarUp;
 
 class AsociarController extends Controller
 {
@@ -50,7 +51,8 @@ class AsociarController extends Controller
         $registroAgregar->server_id = $request->server_id;
 
         $registroAgregar->save();
-        return redirect('/servidor');    }
+        return redirect('asociar');
+    }
 
     /**
      * Display the specified resource.
@@ -81,15 +83,11 @@ class AsociarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AsociarUp $request, $id)
     {
-        $serverup = Asociar::findOrFail($id);
-        if ($request->user_id != NULL){
-            $serverup->user_id = $request->user_id;
-        }
-        if ($request->server_id != NULL){
-            $serverup->server_id = $request->server_id;
-        }
+        $serverup = Asociar::find($id);
+        $serverup->user_id = $request->user_id;
+        $serverup->server_id = $request->server_id;
 
         $serverup->save();
         return redirect('/asociarup');
@@ -104,9 +102,16 @@ class AsociarController extends Controller
     public function destroy($id)
     {
         Asociar::destroy($id);
+        return redirect('/verasociar');
     }
     public function ver(){
         $servers = Asociar::all();
         return view('displayasociar', ['servers' => $servers]);
+    }
+
+    public function actualizar($id)
+    {
+        $jugos = Asociar::find($id);
+        return view('asociarup',['jugos'=>$jugos]);
     }
 }

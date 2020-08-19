@@ -15,4 +15,5 @@ yarn-error.log
 docker-compose.yml
 mem*
 cpu
-Recursos
+recursos.sh
+nohup.out

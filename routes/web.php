@@ -50,11 +50,11 @@ Route::group(['middleware' => 'tokenvalido'], function () {
 
         //Rutas actualizar
         Route::get('/actualizar/{id}','RegistroController@actualizar')->name('actualizar');
-        Route::post('/actualziaruser/{id}','RegistroController@update')->name('actualizaruser');
+        Route::put('/actualziaruser/{id}','RegistroController@update')->name('actualizaruser');
         Route::get('/serverup/{id}','ServidorController@actualizar')->name('serverup');
-        Route::post('/actualziarserver/{id}','ServidorController@update')->name('actualizarserver');
+        Route::put('/actualziarserver/{id}','ServidorController@update')->name('actualizarserver');
         Route::get('/asociarup/{id}','AsociarController@actualizar')->name('asociarup');
-        Route::post('/actualziarasociar/{id}','AsociarController@update')->name('actualizarasociar');
+        Route::put('/actualziarasociar/{id}','AsociarController@update')->name('actualizarasociar');
 
         //Rutas borrar
         Route::put('/eliminar/{id}','RegistroController@destroy')->name('eliminar');

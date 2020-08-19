@@ -27,7 +27,7 @@ class UsuarioRegistro extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-            'telegramId' => ['required','min:9','max:9','unique:users'],
+            'telegramId' => ['required','min:9','max:9'],
         ];
     }
 }

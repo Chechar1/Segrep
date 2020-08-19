@@ -11,8 +11,8 @@
         <tbody>
             @foreach ($servers as $server)
                 <tr>
-                    <td class="v-align-middle">{{$server->user_name}}</td>
-                    <td class="v-align-middle">{{$server->server_name}}</td>
+                    <td class="v-align-middle">{{$server->user_id}}</td>
+                    <td class="v-align-middle">{{$server->server_id}}</td>
 
                     <td class="v-align-middle">
 
@@ -20,7 +20,7 @@
 
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <a href="{{ route('asociarup',$server->id) }}" class="btn btn-primary">Editar</a>
+                            <a href="{{ route('asociarup', $server->id) }}" class="btn btn-primary">Editar</a>
 
                             <button type="submit" class="btn btn-danger">Eliminar</button>
 

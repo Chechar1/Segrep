@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->string('password');
-            $table->string('telegramId')->nullable()->unique();
+            $table->string('telegramId')->nullable();
             $table->string('multitoken')->nullable();
             $table->boolean('enviado')->default(false);
             $table->boolean('is_valido')->default(false);

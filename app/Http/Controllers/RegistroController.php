@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use App\Http\Requests\UsuarioRegistro;
+use App\Http\Requests\UserUp;
 
 class RegistroController extends Controller
 {
@@ -83,21 +84,14 @@ class RegistroController extends Controller
      * @param  \App\Registro  $registro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUp $request, $id)
     {
-        $resgistroup = Registro::findOrFail($id);
-        if ($request->name != NULL){
-            $resgistroup->name = $request->name;
-        }
-        if ($request->email != NULL){
-            $resgistroup->email = $request->name;
-        }
-        if ($request->password != NULL){
-            $resgistroup->password = $request->name;
-        }
-        if ($request->telegramId != NULL){
-            $resgistroup->telegramId = $request->name;
-        }
+        $resgistroup = Registro::find($id);
+        $resgistroup->name = $request->name;
+        $resgistroup->email = $request->name;
+        $resgistroup->password = $request->name;
+        $resgistroup->telegramId = $request->name;
+
 
         $resgistroup->save();
         return redirect('/actualizar');
@@ -112,10 +106,16 @@ class RegistroController extends Controller
     public function destroy($id)
     {
         Registro::destroy($id);
+        return redirect('/ver');
     }
     public function ver(){
         $servers = Registro::all();
         return view('displayusers', ['servers' => $servers]);
+    }
+    public function actualizar($id)
+    {
+        $jugos = Registro::find($id);
+        return view('createup',['jugos'=>$jugos]);
     }
 }
 

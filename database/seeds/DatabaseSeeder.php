@@ -19,5 +19,12 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('Fernandez12'),
             'telegramId' => '292068042',
         ]);
+        DB::table('servidores')->insert([
+            'name' => 'Servidor',
+            'ip' => '10.0.2.6',
+            'password' => Hash::make('Fernandez13'),
+            'host' => '10.0.2.6',
+            'port' => '8081'
+        ]);
     }
 }

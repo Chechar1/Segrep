@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use App\Http\Requests\ServidorRegistro;
+use App\Http\Requests\ServerUp;
 
 class ServidorController extends Controller
 {
@@ -85,24 +86,14 @@ class ServidorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ServerUp $request, $id)
     {
-        $serverup = Servidor::findOrFail($id);
-        if ($request->name != NULL){
-            $serverup->name = $request->name;
-        }
-        if ($request->ip != NULL){
-            $serverup->ip = $request->name;
-        }
-        if ($request->password != NULL){
-            $serverup->password = $request->name;
-        }
-        if ($request->host != NULL){
-            $serverup->host = $request->name;
-        }
-        if ($request->port != NULL){
-            $serverup->port = $request->name;
-        }
+        $serverup = Servidor::find($id);
+        $serverup->name = $request->name;
+        $serverup->ip = $request->ip;
+        $serverup->password = $request->password;
+        $serverup->host = $request->host;
+        $serverup->port = $request->port;
         $serverup->save();
         return redirect('/servidor');
     }
@@ -116,9 +107,15 @@ class ServidorController extends Controller
     public function destroy($id)
     {
         Servidor::destroy($id);
+        return redirect('/verserver');
     }
     public function ver(){
         $servers = Servidor::all();
         return view('displayserver', ['servers' => $servers]);
+    }
+    public function actualizar($id)
+    {
+        $jugos = Servidor::find($id);
+        return view('serverup',['jugos'=>$jugos]);
     }
 }
