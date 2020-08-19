@@ -16,11 +16,11 @@
 
                     <td class="v-align-middle">
 
-                        <form action="{{ route('/delasociar', $server->id) }}" method="POST" class="form-horizontal" role="form">
+                        <form action="{{ route('eliminarasociar', $server->id) }}" method="POST" class="form-horizontal" role="form">
 
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <a href="{{ route('/asociarup',$server->id) }}" class="btn btn-primary">Editar</a>
+                            <a href="{{ route('asociarup',$server->id) }}" class="btn btn-primary">Editar</a>
 
                             <button type="submit" class="btn btn-danger">Eliminar</button>
 
