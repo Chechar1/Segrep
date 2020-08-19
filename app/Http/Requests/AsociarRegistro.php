@@ -24,6 +24,8 @@ class AsociarRegistro extends FormRequest
     public function rules()
     {
         return [
+            'user_name' => 'required',
+            'server_name' => 'required',
             'user_id' => 'required',
             'server_id' => 'required'
         ];
