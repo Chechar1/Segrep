@@ -57,8 +57,8 @@ Route::group(['middleware' => 'tokenvalido'], function () {
         Route::post('/actualziarasociar','AsociarController@update')->name('actualizarasociar');
 
         //Rutas borrar
-        Route::put('/eliminar','RegistroController@delete')->name('eliminar');
-        Route::put('/serverdel','ServidorController@delete')->name('eliminarservidor');
-        Route::put('/delasociar','AsociarController@delete')->name('eliminarasociar');
+        Route::put('/eliminar','RegistroController@destroy')->name('eliminar');
+        Route::put('/serverdel','ServidorController@destroy')->name('eliminarservidor');
+        Route::put('/delasociar','AsociarController@destroy')->name('eliminarasociar');
     });
 });
