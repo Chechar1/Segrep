@@ -40,7 +40,7 @@ Route::group(['middleware' => 'tokenvalido'], function () {
 
         //Rutas registro
         Route::post('/registro', 'RegistroController@store')->name('registro');
-        Route::get('/registroserver','ServidorController@store')->name('registroserver');
+        Route::post('/registroserver','ServidorController@store')->name('registroserver');
         Route::post('/registroasociar','AsociarController@store')->name('registroasociar');
 
         //Ruta para ver

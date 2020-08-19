@@ -19,7 +19,7 @@ class CreateServidoresTable extends Migration
             $table->string('ip')->unique();
             $table->string('password');
             $table->string('host');
-            $table->string('port');
+            $table->integer('port');
             $table->softDeletes();
             $table->timestamps();
         });
