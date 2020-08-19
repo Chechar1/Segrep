@@ -50,15 +50,15 @@ Route::group(['middleware' => 'tokenvalido'], function () {
 
         //Rutas actualizar
         Route::get('/actualizar','RegistroController@actualizar')->name('actualizar');
-        Route::post('/actualziaruser','RegistroController@update')->name('actualizaruser');
+        Route::post('/actualziaruser/{id}','RegistroController@update')->name('actualizaruser');
         Route::get('/serverup','ServidorController@actualizar')->name('serverup');
-        Route::post('/actualziarserver','ServidorController@update')->name('actualizarserver');
+        Route::post('/actualziarserver/{id}','ServidorController@update')->name('actualizarserver');
         Route::get('/asociarup','AsociarController@actualizar')->name('asociarup');
-        Route::post('/actualziarasociar','AsociarController@update')->name('actualizarasociar');
+        Route::post('/actualziarasociar/{id}','AsociarController@update')->name('actualizarasociar');
 
         //Rutas borrar
-        Route::put('/eliminar','RegistroController@destroy')->name('eliminar');
-        Route::put('/serverdel','ServidorController@destroy')->name('eliminarservidor');
-        Route::put('/delasociar','AsociarController@destroy')->name('eliminarasociar');
+        Route::put('/eliminar/{id}','RegistroController@destroy')->name('eliminar');
+        Route::put('/serverdel/{id}','ServidorController@destroy')->name('eliminarservidor');
+        Route::put('/delasociar/{id}','AsociarController@destroy')->name('eliminarasociar');
     });
 });
